@@ -28,6 +28,8 @@ public class CommunityDialectSelector implements DialectSelector {
 				return DB2390V8Dialect.class;
 			case "Cache":
 				return CacheDialect.class;
+			case "Iris":
+				return InterSystemsIRISDialect.class;
 			case "Cache71":
 				return Cache71Dialect.class;
 			case "CUBRID":

@@ -98,6 +98,21 @@ public enum CommunityDatabase {
 		}
 	},
 
+	IRIS {
+		@Override
+		public Dialect createDialect(DialectResolutionInfo info) {
+			return new InterSystemsIRISDialect( info );
+		}
+		@Override
+		public boolean productNameMatches(String databaseName) {
+			return databaseName.startsWith( "Iris" );
+		}
+		@Override
+		public String getDriverClassName(String jdbcUrl) {
+			return "com.intersystems.jdbc.IRISDriver";
+		}
+	},
+
 	CUBRID {
 		@Override
 		public Dialect createDialect(DialectResolutionInfo info) {
